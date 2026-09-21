@@ -78,7 +78,7 @@ export default function Home() {
 
       <section className="season-showcase reveal">
         <Image
-          src="/warehouse-seasons.png"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/warehouse-seasons.png`}
           alt="A warm autumn parcel warehouse transitioning into a snowy winter night"
           fill
           priority
