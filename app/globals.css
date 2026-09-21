@@ -154,49 +154,8 @@ footer div { display:flex; gap:22px; }
 @keyframes conveyor { to { transform:translateX(calc(-50% - 9px)); } }
 @keyframes reveal { from { opacity:0; transform:translateY(32px) scale(.985); } to { opacity:1; transform:none; } }
 @media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto}.belt-track,.reveal{animation:none}.text-link svg,.feature-card,.booster-card{transition:none} }
+@media (max-width:960px) {  .hero-grid { grid-template-columns: 1fr; gap: 44px; padding-top: 55px;}.hero-copy { text-align: center;} .hero-copy p { margin-inline: auto;} .hero-actions { justify-content: center;}.intro { grid-template-columns: 1fr; gap: 35px; padding: 90px 0; }.section-heading { display: block; }.boosters { grid-template-columns: 1fr; gap: 45px; padding-block: 90px; } .hero-visual, .boosters-copy, .booster-stack { min-width: 0; }}
 @media (max-width:800px) { .nav-links a:first-child{display:none}.hero-grid{grid-template-columns:1fr;gap:44px;padding-top:65px}.hero-copy{text-align:center}.hero-copy p{margin-inline:auto}.hero-actions{justify-content:center}.hero-visual{min-height:440px}.intro{grid-template-columns:1fr;gap:35px;padding:85px 0}.season-showcase{height:650px;margin-bottom:95px}.season-showcase img{object-position:60% center}.feature-grid{grid-template-columns:1fr}.feature-card{min-height:310px}.boosters{grid-template-columns:1fr;gap:45px;padding-block:85px}.launch-card{grid-template-columns:auto 1fr}.launch-card .store-pill{grid-column:1/-1;text-align:center}.contact-panel{grid-template-columns:1fr}.contact-pending{max-width:none}.support-grid{grid-template-columns:1fr} }
-@media (max-width:960px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 44px;
-    padding-top: 55px;
-  }
-
-  .hero-copy {
-    text-align: center;
-  }
-
-  .hero-copy p {
-    margin-inline: auto;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .intro {
-    grid-template-columns: 1fr;
-    gap: 35px;
-    padding: 90px 0;
-  }
-
-  .section-heading {
-    display: block;
-  }
-
-  .boosters {
-    grid-template-columns: 1fr;
-    gap: 45px;
-    padding-block: 90px;
-  }
-
-  .hero-visual,
-  .boosters-copy,
-  .booster-stack {
-    min-width: 0;
-  }
-}
-
 @media (max-width:600px) {
   .site-nav,
   .hero-grid,
