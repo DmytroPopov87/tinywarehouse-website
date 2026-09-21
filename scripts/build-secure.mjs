@@ -13,6 +13,7 @@ if (build.status !== 0) process.exit(build.status ?? 1);
 
 const output = path.join(root, "out");
 const hashes = new Set();
+const htmlFiles = [];
 let pages = 0;
 function inspect(directory) {
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
@@ -20,6 +21,7 @@ function inspect(directory) {
     if (entry.isDirectory()) inspect(filename);
     else if (entry.name.endsWith(".html")) {
       pages++;
+      htmlFiles.push(filename);
       const html = readFileSync(filename, "utf8");
       for (const script of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi)) {
         if (!/\bsrc\s*=/i.test(script[1]) && script[2].trim()) {
@@ -31,7 +33,10 @@ function inspect(directory) {
 }
 inspect(output);
 if (pages < 3) throw new Error("Expected exported Home, Privacy and Support pages.");
-for (const name of ["index.html", "privacy.html", "support.html"]) {
+const requiredPages = process.env.GITHUB_PAGES === "true"
+  ? ["index.html", "privacy/index.html", "support/index.html"]
+  : ["index.html", "privacy.html", "support.html"];
+for (const name of requiredPages) {
   readFileSync(path.join(output, name));
 }
 const policy = [
@@ -60,4 +65,13 @@ const headers = [
   "",
 ].join("\n");
 writeFileSync(path.join(output, "_headers"), headers);
+if (process.env.GITHUB_PAGES === "true") {
+  // Pages cannot apply Netlify's custom headers. Use the supported HTML CSP subset.
+  const metaPolicy = policy.replace("frame-ancestors 'none'; ", "");
+  for (const filename of htmlFiles) {
+    const html = readFileSync(filename, "utf8");
+    writeFileSync(filename, html.replace("<head>", `<head><meta http-equiv="Content-Security-Policy" content="${metaPolicy}"><meta name="referrer" content="strict-origin-when-cross-origin">`));
+  }
+  writeFileSync(path.join(output, ".nojekyll"), "");
+}
 console.log("Security headers generated for " + pages + " pages; " + hashes.size + " inline script hashes.");
