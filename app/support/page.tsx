@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Bell, CreditCard, Heart, HelpCircle, Package, RotateCcw } from "lucide-react";
+import { ArrowLeft, Bell, CreditCard, Heart, HelpCircle, RotateCcw } from "lucide-react";
 
 export const dynamic = "force-static";
 
@@ -19,7 +20,18 @@ export default function SupportPage() {
   return (
     <main className="legal-shell">
       <nav className="legal-nav">
-        <Link className="wordmark" href="/"><span className="brand-mark"><Package size={22} /></span><span>TINY WAREHOUSE</span></Link>
+        <Link className="wordmark" href="/" aria-label="Tiny Warehouse home">
+          <span className="brand-mark">
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/tw-logo.png`}
+              alt=""
+              width={56}
+              height={56}
+              priority
+            />
+          </span>
+          <span>TINY WAREHOUSE</span>
+        </Link>
         <Link className="back-link" href="/"><ArrowLeft size={17} /> Back to game</Link>
       </nav>
       <article className="legal-card support-card">
