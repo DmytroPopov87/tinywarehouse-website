@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  ArrowRight, Box, CalendarDays, Heart, Package, ScanLine,
+  ArrowRight, Box, CalendarDays, Heart, ScanLine,
   Snowflake, Sparkles, Timer, Trophy, WandSparkles,
 } from "lucide-react";
 
@@ -20,7 +20,15 @@ export default function Home() {
       <section className="hero-shell">
         <nav className="site-nav" aria-label="Main navigation">
           <Link className="wordmark" href="/" aria-label="Tiny Warehouse home">
-            <span className="brand-mark"><Package size={22} strokeWidth={2.6} /></span>
+            <span className="brand-mark">
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/tw-logo.png`}
+                alt=""
+                width={56}
+                height={56}
+                priority
+              />
+            </span>
             <span>TINY WAREHOUSE</span>
           </Link>
           <div className="nav-links">
@@ -132,7 +140,14 @@ export default function Home() {
       </section>
 
       <section className="launch-card reveal">
-        <span className="launch-mark"><Package /></span>
+        <span className="launch-mark">
+          <Image
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/tw-logo.png`}
+            alt=""
+            width={82}
+            height={82}
+          />
+        </span>
         <div>
           <span className="section-kicker">CLOCK IN SOON</span>
           <h2>Your first shift is waiting.</h2>
