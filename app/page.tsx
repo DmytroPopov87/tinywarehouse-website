@@ -85,16 +85,16 @@ export default function Home() {
         </p>
       </section>
 
-      <section className={gallery.gameplaySection} id="gameplay" aria-labelledby="gameplay-title">
-        <div className={`${gallery.gameplayHeading} reveal`}>
-          <div>
-            <span className="section-kicker">ACTUAL GAMEPLAY</span>
-            <h2 id="gameplay-title">Clock in.<br />Sort it out.</h2>
-          </div>
+      <section
+        className={gallery.gameplaySection}
+        id="gameplay"
+        aria-label="Actual Tiny Warehouse gameplay"
+      >
+        <div className={`${gallery.gameplayLead} reveal`}>
+          <span className="section-kicker">ACTUAL GAMEPLAY</span>
           <p>
-            Tiny Warehouse is built around quick, readable sorting. Match each
-            parcel to its conveyor, deal with special handling rules and keep
-            the floor moving as the shifts get busier.
+            Drag parcels to their matching conveyors, handle special parcel
+            rules and keep the floor moving as each shift gets busier.
           </p>
         </div>
 
