@@ -6,6 +6,7 @@ import {
   ArrowRight, Box, CalendarDays, Heart, ScanLine,
   Snowflake, Sparkles, Timer, Trophy, WandSparkles,
 } from "lucide-react";
+import gallery from "./gameplay-gallery.module.css";
 
 const parcels = [
   { label: "CARGO", tone: "coral" },
@@ -47,7 +48,7 @@ export default function Home() {
             </p>
             <div className="hero-actions">
               <span className="store-pill">Coming soon to the App Store</span>
-              <a className="text-link" href="#game">Explore the warehouse <ArrowRight size={18} /></a>
+              <a className="text-link" href="#gameplay">See the game <ArrowRight size={18} /></a>
             </div>
           </div>
 
@@ -82,6 +83,95 @@ export default function Home() {
           clever boosters when the warehouse gets busy. New mechanics arrive
           naturally as the seasons change.
         </p>
+      </section>
+
+      <section className={gallery.gameplaySection} id="gameplay" aria-labelledby="gameplay-title">
+        <div className={`${gallery.gameplayHeading} reveal`}>
+          <div>
+            <span className="section-kicker">ACTUAL GAMEPLAY</span>
+            <h2 id="gameplay-title">Clock in.<br />Sort it out.</h2>
+          </div>
+          <p>
+            Tiny Warehouse is built around quick, readable sorting. Match each
+            parcel to its conveyor, deal with special handling rules and keep
+            the floor moving as the shifts get busier.
+          </p>
+        </div>
+
+        <div className={gallery.galleryGrid}>
+          <figure className={`${gallery.featureShot} reveal`}>
+            <div className={`${gallery.phoneFrame} ${gallery.featureFrame}`}>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/gameplay/gameplay-scan.webp`}
+                alt="Tiny Warehouse gameplay showing parcels, sorting conveyors, lives and boosters"
+                width={720}
+                height={1559}
+                sizes="(max-width: 760px) 92vw, (max-width: 1100px) 56vw, 590px"
+              />
+            </div>
+            <figcaption>
+              <span className={gallery.captionKicker}>ON THE FLOOR</span>
+              <h3>Read fast. Sort clean.</h3>
+              <p>
+                Colour and symbol keep every destination readable while SCAN,
+                heavy and other special parcels change the rhythm of a shift.
+              </p>
+            </figcaption>
+          </figure>
+
+          <div className={gallery.supportingShots}>
+            <figure className={`${gallery.storyCard} reveal`}>
+              <div className={`${gallery.cropFrame} ${gallery.homeCrop}`}>
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/gameplay/home.webp`}
+                  alt="Tiny Warehouse main menu with Play, Levels and Shop"
+                  width={720}
+                  height={1559}
+                  sizes="(max-width: 760px) 92vw, 285px"
+                />
+              </div>
+              <figcaption>
+                <span className={gallery.captionKicker}>CLOCK IN</span>
+                <h3>A clear home base.</h3>
+                <p>Jump straight into your current shift, revisit levels or check the shop.</p>
+              </figcaption>
+            </figure>
+
+            <figure className={`${gallery.storyCard} reveal`}>
+              <div className={`${gallery.cropFrame} ${gallery.shiftCrop}`}>
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/gameplay/select-shift.webp`}
+                  alt="Tiny Warehouse shift selection with warehouse rank, Daily Shift, Peak Shift and seasonal levels"
+                  width={720}
+                  height={1559}
+                  sizes="(max-width: 760px) 92vw, 285px"
+                />
+              </div>
+              <figcaption>
+                <span className={gallery.captionKicker}>BUILD YOUR CAREER</span>
+                <h3>Sixty shifts and more.</h3>
+                <p>Seasonal chapters sit alongside Daily Shift and endless Peak Shift challenges.</p>
+              </figcaption>
+            </figure>
+
+            <figure className={`${gallery.storyCard} ${gallery.maraCard} reveal`}>
+              <div className={`${gallery.cropFrame} ${gallery.maraCrop}`}>
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/gameplay/mara-brief.webp`}
+                  alt="Mara giving the player a Tiny Warehouse shift briefing"
+                  width={720}
+                  height={1559}
+                  sizes="(max-width: 760px) 92vw, 590px"
+                />
+              </div>
+              <figcaption>
+                <span className={gallery.captionKicker}>MEET MARA</span>
+                <h3>Guidance without the clutter.</h3>
+                <p>Mara introduces new ideas as they arrive, keeping the first shifts friendly and focused.</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section className="season-showcase reveal">
