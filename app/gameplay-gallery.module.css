@@ -1,0 +1,276 @@
+.gameplaySection {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto 130px;
+}
+
+.gameplayHeading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, .8fr);
+  align-items: end;
+  gap: clamp(34px, 7vw, 90px);
+  margin-bottom: 54px;
+}
+
+.gameplayHeading h2 {
+  margin: 14px 0 0;
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: .9;
+  letter-spacing: -.065em;
+}
+
+.gameplayHeading > p {
+  margin: 0;
+  max-width: 520px;
+  color: #67645f;
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.featureShot,
+.storyCard {
+  margin: 0;
+}
+
+.featureShot {
+  padding: 24px;
+  border: 1px solid #e4d7c1;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 82% 10%, rgba(255,191,47,.18), transparent 27%),
+    #fffdf7;
+  box-shadow: 0 30px 70px rgba(77, 57, 22, .11);
+}
+
+.phoneFrame,
+.cropFrame {
+  position: relative;
+  overflow: hidden;
+  background: #dfe4da;
+  border: 1px solid rgba(17,24,44,.12);
+  box-shadow: 0 20px 45px rgba(17,24,44,.16);
+}
+
+.phoneFrame {
+  width: min(100%, 520px);
+  margin: 0 auto;
+  border-radius: 36px;
+}
+
+.phoneFrame::before,
+.cropFrame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.42);
+}
+
+.featureFrame {
+  aspect-ratio: 1242 / 2688;
+}
+
+.phoneFrame img,
+.cropFrame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featureFrame img {
+  object-position: center;
+}
+
+.featureShot figcaption {
+  max-width: 520px;
+  margin: 26px auto 2px;
+}
+
+.captionKicker {
+  color: #bd6c19;
+  font-size: .72rem;
+  font-weight: 950;
+  letter-spacing: .14em;
+}
+
+.featureShot h3,
+.storyCard h3 {
+  margin: 8px 0 9px;
+  color: #11182c;
+  letter-spacing: -.035em;
+}
+
+.featureShot h3 {
+  font-size: clamp(1.8rem, 3vw, 2.65rem);
+}
+
+.featureShot p,
+.storyCard p {
+  margin: 0;
+  color: #67645f;
+  line-height: 1.65;
+}
+
+.supportingShots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.storyCard {
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid #e7dece;
+  border-radius: 28px;
+  background: #fffdf7;
+  box-shadow: 0 18px 45px rgba(30,34,46,.08);
+}
+
+.cropFrame {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 20px;
+}
+
+.homeCrop img {
+  object-position: center 17%;
+}
+
+.shiftCrop img {
+  object-position: center 16%;
+}
+
+.maraCrop img {
+  object-position: center 40%;
+}
+
+.storyCard figcaption {
+  padding: 18px 7px 7px;
+}
+
+.storyCard h3 {
+  font-size: 1.35rem;
+}
+
+.storyCard p {
+  font-size: .92rem;
+}
+
+.maraCard {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(220px, .78fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  padding: 18px;
+}
+
+.maraCard .cropFrame {
+  aspect-ratio: 4 / 3;
+}
+
+.maraCard figcaption {
+  padding: 18px 18px 18px 4px;
+}
+
+.maraCard h3 {
+  font-size: clamp(1.5rem, 2.7vw, 2.25rem);
+}
+
+@media (max-width: 960px) {
+  .gameplayHeading {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featureShot {
+    display: grid;
+    grid-template-columns: minmax(260px, .85fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 28px;
+  }
+
+  .featureShot figcaption {
+    margin: 0;
+  }
+
+  .phoneFrame {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .gameplaySection {
+    width: calc(100% - 28px);
+    margin-bottom: 95px;
+  }
+
+  .gameplayHeading {
+    margin-bottom: 34px;
+  }
+
+  .featureShot {
+    display: block;
+    padding: 15px;
+    border-radius: 28px;
+  }
+
+  .featureShot figcaption {
+    margin: 22px 7px 8px;
+  }
+
+  .phoneFrame {
+    max-width: 470px;
+    border-radius: 27px;
+  }
+
+  .supportingShots {
+    grid-template-columns: 1fr;
+  }
+
+  .storyCard {
+    padding: 14px;
+    border-radius: 25px;
+  }
+
+  .cropFrame {
+    aspect-ratio: 4 / 4.5;
+  }
+
+  .maraCard {
+    grid-column: auto;
+    display: block;
+    padding: 14px;
+  }
+
+  .maraCard .cropFrame {
+    aspect-ratio: 4 / 4.5;
+  }
+
+  .maraCard figcaption {
+    padding: 18px 7px 7px;
+  }
+}
+
+@media (max-width: 420px) {
+  .gameplayHeading h2 {
+    font-size: clamp(2.8rem, 14vw, 4rem);
+  }
+
+  .featureShot h3 {
+    font-size: 1.75rem;
+  }
+}
