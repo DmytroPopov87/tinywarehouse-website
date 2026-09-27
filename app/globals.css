@@ -37,8 +37,9 @@ img, svg {
 }
 .hero-shell::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.17; background-image:linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size:48px 48px; mask-image:linear-gradient(to bottom,transparent,black); }
 .site-nav { width:min(1180px, calc(100% - 40px)); height:92px; margin:auto; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:2; }
-.wordmark { display:flex; align-items:center; gap:12px; font-size:.92rem; font-weight:900; letter-spacing:.08em; }
-.brand-mark { width:42px; height:42px; display:grid; place-items:center; color:var(--ink); background:var(--yellow); border-radius:12px; transform:rotate(-4deg); box-shadow:0 8px 0 rgba(0,0,0,.13); }
+.wordmark { display:flex; align-items:center; gap:10px; font-size:.92rem; font-weight:900; letter-spacing:.08em; }
+.brand-mark { width:56px; height:56px; display:grid; place-items:center; flex:none; }
+.brand-mark img { width:100%; height:100%; object-fit:contain; display:block; }
 .nav-links { display:flex; gap:30px; font-size:.95rem; font-weight:700; color:#d9e0ed; }
 .nav-links a { transition:color .2s ease; }
 .nav-links a:hover { color:var(--yellow); }
@@ -98,8 +99,8 @@ h1 { margin:22px 0 24px; font-size:clamp(4rem,8vw,7.4rem); line-height:.82; lett
 .booster-card span { color:#abb6c9; font-size:.86rem; }
 .booster-card b { font-size:.78rem; padding:7px 10px; border-radius:10px; color:var(--ink); background:var(--yellow); }
 .launch-card { width:min(1180px,calc(100% - 40px)); margin:0 auto 110px; padding:50px; display:grid; grid-template-columns:auto 1fr auto; gap:28px; align-items:center; border:1px solid #e6d8bf; border-radius:32px; background:linear-gradient(125deg,#fff3d4,#fffaf0 65%); box-shadow:0 25px 55px rgba(116,84,29,.1); }
-.launch-mark { width:76px; height:76px; display:grid; place-items:center; border-radius:22px; color:var(--ink); background:var(--yellow); transform:rotate(-4deg); box-shadow:0 9px 0 #d99c17; }
-.launch-mark svg { width:36px; height:36px; }
+.launch-mark { width:82px; height:82px; display:grid; place-items:center; flex:none; }
+.launch-mark img { width:100%; height:100%; object-fit:contain; display:block; }
 .launch-card h2 { margin:7px 0 6px; font-size:clamp(2rem,4vw,3.6rem); letter-spacing:-.055em; }
 .launch-card p { margin:0; color:#68645e; }
 .store-pill.dark { color:white; background:var(--ink); box-shadow:none; white-space:nowrap; }
@@ -212,4 +213,4 @@ footer div { display:flex; gap:22px; }
     grid-column: auto;
   }
 }
-@media (max-width:520px) { .site-nav{height:78px}.wordmark{font-size:.78rem}.brand-mark{width:38px;height:38px}.nav-links{gap:0}.hero-grid{width:min(100% - 28px,1180px);padding:50px 0 70px}.hero-shell{min-height:auto}h1{ font-size: clamp(3.1rem, 18vw, 4.6rem);}.hero-copy p{font-size:1rem}.hero-visual{min-height: 360px;border-radius:28px;padding:18px}.season-label{top:22px;left:20px}.parcel{width:98px;border-radius:18px}.intro{width:calc(100% - 32px)}.season-showcase{width:calc(100% - 24px);min-height:560px;border-radius:25px}.season-overlay{left:24px;right:24px}.season-overlay h2{font-size:2.65rem}.feature-section{width:calc(100% - 28px)}.section-heading{display:block}.feature-card{padding:24px}.boosters{padding-inline:16px}.booster-card{grid-template-columns: 34px minmax(0, 1fr);gap:10px;padding:18px 14px}.booster-card b {grid-column: 2; justify-self: start;}.booster-card span{font-size:.76rem}.launch-card{width:calc(100% - 28px);padding:28px;grid-template-columns:1fr;text-align:center}.launch-mark{margin:auto}.launch-card .store-pill{grid-column:auto}.legal-nav{height:84px}.legal-nav .wordmark>span:last-child{display:none}.legal-card{border-radius:24px}.legal-title{grid-template-columns:1fr}.legal-icon{width:58px;height:58px}.legal-title h1{font-size:3.2rem}.support-topic{padding:21px}.contact-panel{padding:23px}footer{width:calc(100% - 32px);flex-direction:column;gap:16px} }
+@media (max-width:520px) { .site-nav{height:78px}.wordmark{font-size:.78rem}.brand-mark{width:46px;height:46px}.nav-links{gap:0}.hero-grid{width:min(100% - 28px,1180px);padding:50px 0 70px}.hero-shell{min-height:auto}h1{ font-size: clamp(3.1rem, 18vw, 4.6rem);}.hero-copy p{font-size:1rem}.hero-visual{min-height: 360px;border-radius:28px;padding:18px}.season-label{top:22px;left:20px}.parcel{width:98px;border-radius:18px}.intro{width:calc(100% - 32px)}.season-showcase{width:calc(100% - 24px);min-height:560px;border-radius:25px}.season-overlay{left:24px;right:24px}.season-overlay h2{font-size:2.65rem}.feature-section{width:calc(100% - 28px)}.section-heading{display:block}.feature-card{padding:24px}.boosters{padding-inline:16px}.booster-card{grid-template-columns: 34px minmax(0, 1fr);gap:10px;padding:18px 14px}.booster-card b {grid-column: 2; justify-self: start;}.booster-card span{font-size:.76rem}.launch-card{width:calc(100% - 28px);padding:28px;grid-template-columns:1fr;text-align:center}.launch-mark{width:72px;height:72px;margin:auto}.launch-card .store-pill{grid-column:auto}.legal-nav{height:84px}.legal-nav .wordmark>span:last-child{display:none}.legal-card{border-radius:24px}.legal-title{grid-template-columns:1fr}.legal-icon{width:58px;height:58px}.legal-title h1{font-size:3.2rem}.support-topic{padding:21px}.contact-panel{padding:23px}footer{width:calc(100% - 32px);flex-direction:column;gap:16px} }
