@@ -6,7 +6,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export const metadata: Metadata = {
   title: "Tiny Warehouse — Cozy Parcel Sorting",
-  description: "Sort colourful parcels through 60 seasonal warehouse shifts. Tiny Warehouse is coming soon to the App Store.",
+  description: "Sort colourful parcels through 60 seasonal warehouse shifts. Tiny Warehouse is available now on the App Store.",
   icons: {
     icon: `${basePath}/favicon.png`,
     shortcut: `${basePath}/favicon.png`,
