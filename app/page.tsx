@@ -239,7 +239,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="launch-card reveal">
+      <section className="launch-card">
         <span className="launch-mark">
           <Image
             src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/tw-logo.png`}
