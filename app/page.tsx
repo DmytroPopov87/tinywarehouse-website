@@ -8,6 +8,8 @@ import {
 } from "lucide-react";
 import gallery from "./gameplay-gallery.module.css";
 
+const APP_STORE_URL = "https://games.apple.com/gb/game/6811616239";
+
 const parcels = [
   { label: "CARGO", tone: "coral" },
   { label: "SEASONAL", tone: "green" },
@@ -47,7 +49,15 @@ export default function Home() {
               keep the conveyor moving through sixty handcrafted shifts.
             </p>
             <div className="hero-actions">
-              <span className="store-pill">Coming soon to the App Store</span>
+              <a
+                className="store-pill"
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download Tiny Warehouse on the App Store"
+              >
+                Download on the App Store
+              </a>
               <a className="text-link" href="#gameplay">See the game <ArrowRight size={18} /></a>
             </div>
           </div>
@@ -239,11 +249,19 @@ export default function Home() {
           />
         </span>
         <div>
-          <span className="section-kicker">CLOCK IN SOON</span>
-          <h2>Your first shift is waiting.</h2>
-          <p>Tiny Warehouse is being prepared for its App Store release.</p>
+          <span className="section-kicker">NOW AVAILABLE</span>
+          <h2>Your first shift is ready.</h2>
+          <p>Tiny Warehouse is available now on the App Store.</p>
         </div>
-        <span className="store-pill dark">Coming soon</span>
+        <a
+          className="store-pill dark"
+          href={APP_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Download Tiny Warehouse on the App Store"
+        >
+          Download now
+        </a>
       </section>
     </main>
   );
